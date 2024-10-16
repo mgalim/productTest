@@ -4,16 +4,17 @@ namespace ProductManager;
 
 public class ProductManager : IProductManager
 {
-    private readonly List<Product> _products;
+    private List<Product> _products;
 
     public ProductManager()
     {
         _products = [];
     }
 
-    public void AddProduct(Product product)
+    public string AddProduct(Product product)
     {
         _products.Add(product);
+        return "Producto agregado con exito.";
     }
 
     public Decimal CalculateTotalPrice(Product product)
@@ -27,4 +28,8 @@ public class ProductManager : IProductManager
         return _products?.Find(p => p.Name == name);
     }
 
+    public List<Product> GetAllProducts()
+    {
+        return _products;
+    }
 }
