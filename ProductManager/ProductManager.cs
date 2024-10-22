@@ -17,7 +17,7 @@ public class ProductManager : IProductManager
         return "Producto agregado con exito.";
     }
 
-    public Decimal CalculateTotalPrice(Product product)
+    public decimal CalculateTotalPrice(Product product)
     {
         decimal tax = product.Category == ProductCategory.Electronica ? 0.10m : 0.05m;
         return product.Price * (1 + tax);
